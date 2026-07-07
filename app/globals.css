@@ -1,0 +1,205 @@
+@import "tailwindcss";
+
+:root {
+  --bg-primary: #060b1f;
+  --bg-secondary: #0b1228;
+  --bg-card: #0e1530;
+  --bg-card-hover: #121a38;
+  --border-subtle: rgba(255, 255, 255, 0.07);
+  --border-glow: rgba(99, 130, 255, 0.25);
+
+  --accent-blue: #4f8ef7;
+  --accent-purple: #a855f7;
+  --accent-cyan: #22d3ee;
+
+  --text-primary: #f0f4ff;
+  --text-secondary: #8892b0;
+  --text-muted: #4a5578;
+}
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─── Gradient Utilities ─── */
+.gradient-text {
+  background: linear-gradient(100deg, #60a5fa 0%, #a78bfa 50%, #f472b6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-blue {
+  background: linear-gradient(90deg, #60a5fa, #818cf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Buttons ─── */
+.btn-primary {
+  background: linear-gradient(135deg, #3b82f6 0%, #6d28d9 100%);
+  color: #fff;
+  font-weight: 600;
+  border-radius: 9999px;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.35);
+}
+.btn-primary:hover {
+  box-shadow: 0 6px 28px rgba(109, 40, 217, 0.5);
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  background: transparent;
+  color: #c7d2fe;
+  font-weight: 600;
+  border-radius: 9999px;
+  border: 1px solid rgba(167, 139, 250, 0.3);
+  transition: all 0.25s ease;
+}
+.btn-outline:hover {
+  background: rgba(167, 139, 250, 0.08);
+  border-color: rgba(167, 139, 250, 0.6);
+}
+
+/* ─── Cards ─── */
+.glass-card {
+  background: linear-gradient(
+    135deg,
+    rgba(14, 21, 48, 0.9) 0%,
+    rgba(10, 15, 35, 0.95) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(16px);
+}
+
+.glass-card-bright {
+  background: linear-gradient(
+    135deg,
+    rgba(18, 26, 56, 0.95) 0%,
+    rgba(14, 21, 48, 0.98) 100%
+  );
+  border: 1px solid rgba(99, 130, 255, 0.18);
+  backdrop-filter: blur(20px);
+}
+
+/* ─── Glows ─── */
+.glow-blue {
+  box-shadow: 0 0 40px rgba(59, 130, 246, 0.2), 0 0 80px rgba(59, 130, 246, 0.08);
+}
+.glow-purple {
+  box-shadow: 0 0 40px rgba(139, 92, 246, 0.2), 0 0 80px rgba(139, 92, 246, 0.08);
+}
+.glow-card {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+/* ─── Background Mesh ─── */
+.bg-mesh {
+  background-image:
+    radial-gradient(ellipse at 20% 50%, rgba(59, 130, 246, 0.08) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 20%, rgba(139, 92, 246, 0.08) 0%, transparent 60%),
+    radial-gradient(ellipse at 50% 80%, rgba(99, 130, 255, 0.05) 0%, transparent 60%);
+}
+
+/* ─── Grid overlay ─── */
+.bg-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+/* ─── Light Mode ─── */
+html.light-mode {
+  --bg-primary: #e8eeff;
+  --bg-secondary: #dde5ff;
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+}
+
+html.light-mode body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+/* Section backgrounds */
+html.light-mode section {
+  background: transparent;
+}
+
+/* Navbar floating pill */
+html.light-mode .navbar-pill {
+  background: rgba(220, 228, 255, 0.85) !important;
+  border-color: rgba(99, 130, 255, 0.2) !important;
+}
+
+/* Text overrides — white text becomes dark */
+html.light-mode .text-white {
+  color: #0f172a !important;
+}
+
+html.light-mode .text-slate-300,
+html.light-mode .text-slate-400,
+html.light-mode [style*="color: #8892b0"],
+html.light-mode [style*="color:#8892b0"] {
+  color: #475569 !important;
+}
+
+html.light-mode .text-\[\#8892b0\] {
+  color: #475569 !important;
+}
+
+html.light-mode .text-\[\#4a5578\] {
+  color: #64748b !important;
+}
+
+/* ─── Marquee animation ─── */
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 60s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* ─── Scrollbar ─── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: #1e2a50;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2d3d70;
+}
