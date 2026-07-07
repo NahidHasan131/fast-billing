@@ -17,8 +17,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${geistSans.variable}`}>
-      <body className="min-h-screen antialiased">
+    <html lang="en" className={`${geistSans.variable}`} suppressHydrationWarning>
+      <body className="min-h-screen antialiased" suppressHydrationWarning>
         <ThemeProvider>
           <Navbar />
           <main>{children}</main>

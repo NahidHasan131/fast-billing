@@ -1,6 +1,7 @@
 import HeroSection from "./components/HeroSection";
 import TrustedBy from "./components/TrustedBy";
 import PackagesSection from "./components/PackagesSection";
+import WhyChooseUs from "./components/WhyChooseUs";
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
       <HeroSection />
       <TrustedBy />
       <PackagesSection />
+      <WhyChooseUs />
     </div>
   );
 }
