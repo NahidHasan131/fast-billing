@@ -9,6 +9,10 @@ import Testimonials from "./components/Testimonials";
 import InstallationProcess from "./components/InstallationProcess";
 import MobileApp from "./components/MobileApp";
 import FAQ from "./components/FAQ";
+import BlogSection from "./components/BlogSection";
+import CTABanner from "./components/CTABanner";
+import ContactSection from "./components/ContactSection";
+import Footer from "./components/Footer";
 
 export default function Home() {
   return (
@@ -24,6 +28,10 @@ export default function Home() {
       <InstallationProcess />
       <MobileApp />
       <FAQ />
+      <BlogSection />
+      <CTABanner />
+      <ContactSection />
+      <Footer />
     </div>
   );
 }
