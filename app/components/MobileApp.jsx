@@ -109,7 +109,7 @@ export default function MobileApp() {
           </motion.div>
 
           {/* Right — Animated phone mockup */}
-          <motion.div className="relative flex justify-center"
+          <motion.div className="relative flex justify-center w-full"
             initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.2 }}>
 
@@ -119,7 +119,7 @@ export default function MobileApp() {
 
             {/* Phone frame */}
             <motion.div
-              className="relative w-64 rounded-[2.5rem] overflow-hidden"
+              className="relative w-72 sm:w-80 lg:w-72 xl:w-80 max-w-full rounded-[2.5rem] overflow-hidden"
               style={{
                 background: dark ? "rgba(8,12,34,0.98)" : "rgba(240,244,255,0.98)",
                 border: dark ? "1px solid rgba(255,255,255,0.12)" : "1px solid rgba(99,130,255,0.25)",

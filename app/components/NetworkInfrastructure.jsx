@@ -73,18 +73,17 @@ export default function NetworkInfrastructure() {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-8 items-start">
+        <div className="grid lg:grid-cols-2 gap-8 items-stretch">
 
           {/* Left — Network diagram */}
           <motion.div
-            className="relative rounded-3xl p-6 overflow-hidden"
+            className="relative rounded-3xl p-6 overflow-hidden h-full"
             style={{
               background: cardBg,
               border: `1px solid ${border}`,
               boxShadow: dark
                 ? "0 8px 40px rgba(0,0,0,0.35)"
                 : "0 8px 32px rgba(99,130,255,0.1)",
-              minHeight: 360,
             }}
             initial={{ opacity: 0, x: -24 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -186,7 +185,7 @@ export default function NetworkInfrastructure() {
           </motion.div>
 
           {/* Right — Specs */}
-          <div className="flex flex-col gap-5">
+          <div className="flex flex-col gap-5 h-full">
             <motion.p
               className="text-sm leading-relaxed transition-colors duration-300"
               style={{ color: textMuted }}
@@ -197,7 +196,8 @@ export default function NetworkInfrastructure() {
             >
               Our multi-tier network architecture ensures maximum reliability with
               automatic failover, load balancing, and zero single points of failure.
-              Built to handle millions of simultaneous connections.
+              Built to handle millions of simultaneous connections with sub-millisecond
+              switching and end-to-end encrypted data paths across all nodes.
             </motion.p>
 
             {specs.map((spec, i) => {
